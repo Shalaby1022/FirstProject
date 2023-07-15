@@ -1,7 +1,63 @@
-﻿
+﻿@model IEnumerable<Item>
+
 @{
     ViewData["Title"] = "Items";
 }
 
-<h1>Items</h1>
+<style>
+    .table-container {
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    table {
+        margin: 0 auto;
+        width: 50%;
+        border-collapse: collapse;
+    }
+
+    th, td {
+        padding: 12px;
+        border: 1px solid #ccc;
+        text-align: left;
+    }
+
+    th {
+        background-color: #f2f2f2;
+    }
+
+    tr:nth-child(even) {
+        background-color: #f9f9f9;
+    }
+
+    tr:hover {
+        background-color: #f5f5f5;
+    }
+</style>
+
+<h1>Items View List</h1>
+
+<div class="table-container">
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Item Name</th>
+                <th>Price</th>
+                <th>Date/Time</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                    <tr>
+                        <td>@item.Id</td>
+                        <td>@item.Name</td>
+                        <td>@item.Price</td>
+                        <td>@item.Date_Time</td>
+                    </tr>
+            }
+        </tbody>
+    </table>
+</div>
 
