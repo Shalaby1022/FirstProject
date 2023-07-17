@@ -1,63 +1,55 @@
-﻿@model IEnumerable<Item>
-
+﻿ @model IEnumerable<Item>
 @{
-    ViewData["Title"] = "Items";
+    ViewData["Title"] = "Index";
 }
 
-<style>
-    .table-container {
-        text-align: center;
-        margin-top: 20px;
-    }
+<div class="container p-3">
 
-    table {
-        margin: 0 auto;
-        width: 50%;
-        border-collapse: collapse;
-    }
+    <div class="row pt-4">
+        <div class="col-6">
+            <h2 class="text-primary">Items View</h2>
+        </div>
+        <div class="col-6 text-end">
+            <a asp-controller="Items" asp-action="New" class="btn btn-primary">
+                <i class="bi bi-plus"></i> &nbsp; Add New Item
+            </a>
+        </div>
+    </div>
 
-    th, td {
-        padding: 12px;
-        border: 1px solid #ccc;
-        text-align: left;
-    }
-
-    th {
-        background-color: #f2f2f2;
-    }
-
-    tr:nth-child(even) {
-        background-color: #f9f9f9;
-    }
-
-    tr:hover {
-        background-color: #f5f5f5;
-    }
-</style>
-
-<h1>Items View List</h1>
-
-<div class="table-container">
-    <table>
+    <table class="table table-hover">
         <thead>
             <tr>
-                <th>Id</th>
-                <th>Item Name</th>
-                <th>Price</th>
-                <th>Date/Time</th>
+                <th scope="col">
+                    Item Name
+                </th>
+                <th scope="col">
+                    Item Price
+                </th>
+                <th scope="col"> 
+                </th>
             </tr>
         </thead>
         <tbody>
             @foreach (var item in Model)
             {
-                    <tr>
-                        <td>@item.Id</td>
-                        <td>@item.Name</td>
-                        <td>@item.Price</td>
-                        <td>@item.Date_Time</td>
-                    </tr>
+                <tr class="table-primary">
+                    <td scope="row" width="50%">
+                        @item.Name
+                    </td>
+                    <td width="30%">
+                        @item.Price
+                    </td>
+                    <td>
+                        <a asp-controller="" asp-action="" class="btn btn-sm btn-success">
+                            <i class="bi bi-pencil"></i>
+                        </a>
+                        &nbsp;
+                        <a asp-controller="" asp-action="" class="btn btn-sm btn-danger">
+                            <i class="bi bi-trash3"></i>
+                        </a>
+                    </td>
+                </tr>
             }
         </tbody>
     </table>
 </div>
-

@@ -20,5 +20,12 @@ namespace FirstProject.Controllers
             return View(itemsList);
         }
 
+        //Get Actions
+        public IActionResult New()
+        {
+
+            return View();
+        }
+
     }
 }
