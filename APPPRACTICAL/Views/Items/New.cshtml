@@ -1,13 +1,13 @@
 ﻿@model Item
 @{
-    ViewData["Title"] = "New ItemList";
+    ViewData["Title"] = "New";
 }
 
 
 <h2 style="text-align: left; margin-bottom: 20px; margin-left: 100px;">Create Product</h2>
 
 <div style="max-width: 100%; margin:auto ; margin-left: 100px ;padding: 20px; border: 1px solid #ccc; border-radius: 5px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">
-    <form asp-controller="Product" asp-action="Create" method="post">
+    <form method="post">
         <div style="margin-bottom: 15px;">
             <label style="display: block; font-weight: bold; color: #333;">Name:</label>
             <input asp-for="Name" style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 3px;" />
