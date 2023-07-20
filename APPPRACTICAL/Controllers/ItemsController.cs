@@ -34,10 +34,20 @@ namespace FirstProject.Controllers
 
         public IActionResult New(Item item)
         {
-            _db.Items.Add(item);
-            _db.SaveChanges();
+            if (ModelState.IsValid)
+            {
+                _db.Items.Add(item);
+                _db.SaveChanges();
 
-            return RedirectToAction("Index");
+                return RedirectToAction("Index");
+
+            }
+
+            else
+            {
+                return View(item);
+
+            }
 
 
         }
